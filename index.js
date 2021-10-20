@@ -51,6 +51,11 @@ client.on("PRIVMSG", async (msg) => {
                         "inline": true
                     },
                     {
+                        "name": "Time",
+                        "value": `<t:${Math.floor(msg.serverTimestampRaw / 1000)}:R>`,
+                        "inline": true
+                    },
+                    {
                         "name": "Message",
                         "value": msg.messageText
                     }
