@@ -57,7 +57,7 @@ client.on("PRIVMSG", async (msg) => {
                     },
                     {
                         "name": "Message",
-                        "value": msg.messageText
+                        "value": msg.messageText.replace(/([`*~>|])/g, '\\$1')
                     }
                 ]
             }])
