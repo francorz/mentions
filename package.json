@@ -2,5 +2,23 @@
   "dependencies": {
     "dank-twitch-irc": "^4.3.0",
     "got": "^11.8.2"
-  }
+  },
+  "name": "mentions",
+  "version": "0.0.1",
+  "description": "xd",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0Supa/mentions.git"
+  },
+  "author": "Supa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0Supa/mentions/issues"
+  },
+  "homepage": "https://github.com/0Supa/mentions#readme"
 }
