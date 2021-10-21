@@ -12,7 +12,7 @@ async function send(embeds) {
             json: { embeds }
         });
     } catch (err) {
-        console.error(`couldn't send mention to the Discord Webhook: ${err.message}`)
+        console.error(`couldn't send message to the Discord Webhook: ${err.message}`)
     }
 }
 
@@ -30,8 +30,10 @@ client.on("PART", ({ channelName }) => {
 });
 
 client.on("PRIVMSG", async (msg) => {
+    if (cooldown.has(msg.senderUserID)) return
+
     for (let i = 0; i < triggersLength; i++) {
-        if (!cooldown.has(msg.senderUserID) && config.regexTriggers[i].test(msg.messageText)) {
+        if (config.regexTriggers[i].test(msg.messageText)) {
             cooldown.add(msg.senderUserID);
             setTimeout(() => {
                 cooldown.delete(msg.senderUserID);
