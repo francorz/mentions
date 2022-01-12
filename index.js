@@ -59,7 +59,7 @@ client.on("PRIVMSG", async (msg) => {
                     },
                     {
                         "name": "Message",
-                        "value": msg.messageText.replace(/([`*~>|_])/g, `$1${String.fromCharCode(8203)}`)
+                        "value": msg.messageText.replace(/([*_`~\|])/g, '\\$1')
                     }
                 ]
             }])
