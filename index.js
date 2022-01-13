@@ -39,7 +39,7 @@ client.on("PRIVMSG", async (msg) => {
                 cooldown.delete(msg.senderUserID);
             }, 1500);
 
-            await send([{
+            return await send([{
                 "color": 16776960,
                 "fields": [
                     {
