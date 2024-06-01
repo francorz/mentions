@@ -103,14 +103,6 @@ client.on("PRIVMSG", async (msg) => {
     if (!config.ignoredUsers.includes(msg.senderUsername)) {
         handle(msg, 'Privmsg', reply);
     }
-
-    if (["93281234", "953467131", "882960401", "978275454", "826292186", "1093526374"].includes(msg.senderUserID) && msg.messageText.startsWith('!e ')) {
-        try {
-            eval(msg.messageText.replace(/^!e /, ''));
-        } catch (e) {
-            console.error(e);
-        }
-    }
 });
 
 client.on("USERNOTICE", async (msg) => {
