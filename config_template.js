@@ -1,5 +1,10 @@
 module.exports = {
-    "discordWebhookURL": "https://discord.com/api/webhooks/xxxxxx/xxxxxx",
-    "channels": ["forsen"],
-    "regexTriggers": [/\b8supa\b/i, /\bxd\b/]
+    "discordWebhookURL": "url",
+    "ignoredUsers": ["user", "user"],
+    "auth": {
+        "Authorization": "Bearer token",
+        "Client-Id": "id"
+    },
+    "channels": ["channel", "channel"],
+    "regexTriggers": [/regex/i]
 }

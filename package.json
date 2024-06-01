@@ -1,7 +1,8 @@
 {
   "dependencies": {
-    "dank-twitch-irc": "^4.3.0",
-    "got": "^11.8.2"
+    "@kararty/dank-twitch-irc": "^6.0.0",
+    "@esm2cjs/got": "^13.0.0",
+    "got": "npm:@esm2cjs/got@^13.0.0"
   },
   "name": "mentions",
   "version": "0.0.1",
