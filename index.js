@@ -6,9 +6,9 @@ const cooldown = new Set();
 
 const client = new ChatClient();
 
-async function send(embeds, username, avatar_url) {
+async function send(embeds, username, avatar_url, webhookURL) {
     try {
-        await got.post(config.discordWebhookURL, {
+        await got.post(webhookURL, {
             json: {
                 username: username,
                 avatar_url: avatar_url,
@@ -22,7 +22,7 @@ async function send(embeds, username, avatar_url) {
 
 client.on("ready", () => {
     console.log('Chat connected');
-    client.joinAll(config.channels);
+    client.joinAll([...config.name1, ...config.name2]);
 });
 
 client.on("JOIN", ({ channelName }) => {
@@ -84,10 +84,11 @@ async function handle(msg, nonce, reply) {
                 sender_name = msg.senderUsername
             }
 
+            const webhookURL = config.name1.includes(msg.channelName) ? config.webhookURLs.name1 : config.webhookURLs.name2;
             return await send([{
                 "color": parseInt(msg.colorRaw.replace('#', ''), 16),
                 "fields": fields
-            }], sender_name, avatar_url);
+            }], sender_name, avatar_url, webhookURL);
         }
     }
 }
